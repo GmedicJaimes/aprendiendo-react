@@ -4,12 +4,12 @@ const TwitterFollowCard = () => {
       <header className="tw-followCard-header">
         <img
           className="tw-followCard-avatar"
-          src="https://unavatar.io/midudev"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrR2431yZjH3LfZfYlzaR7HajKvzb6i4YanQ&usqp=CAU"
           alt="avatar de midu"
         />
         <div className="tw-followCard-info">
-          <strong>Miguel Ángel Durán</strong>
-          <span className="tw-followCard-infoUserName">@midudev</span>
+          <strong>Gulliano Medic Jaimes</strong>
+          <span className="tw-followCard-infoUserName">@mejadev</span>
         </div>
       </header>
 

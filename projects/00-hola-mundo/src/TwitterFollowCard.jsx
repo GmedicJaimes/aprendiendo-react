@@ -1,4 +1,4 @@
-const TwitterFollowCard = ({ formatUserName, userName, name, isFollowing }) => {
+const TwitterFollowCard = ({ userName, name, isFollowing, children }) => {
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -8,10 +8,11 @@ const TwitterFollowCard = ({ formatUserName, userName, name, isFollowing }) => {
           alt="avatar de saitama"
         />
         <div className="tw-followCard-info">
-          <strong>{name}</strong>
-          <span className="tw-followCard-infoUserName">
-            {formatUserName(userName)}
-          </span>
+          <strong>
+            {name}
+            {children}
+          </strong>
+          <span className="tw-followCard-infoUserName">@{userName}</span>
         </div>
       </header>
 

@@ -36,3 +36,12 @@
   font-family: system-ui;
   cursor: pointer;
 }
+
+.tw-followCard-button:hover {
+  background-color: #09f;
+  transition: 0.3s ease background-color;
+}
+
+.title-component {
+  color: #09f;
+}

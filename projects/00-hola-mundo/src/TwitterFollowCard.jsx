@@ -1,4 +1,24 @@
-const TwitterFollowCard = ({ userName, name, isFollowing, children }) => {
+import { useState } from "react";
+import "./App.css";
+const TwitterFollowCard = ({
+  userName,
+  name,
+  children,
+  initialIsFollowing,
+}) => {
+  //creacion del estado para el boton de seguir
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
+
+  //const creadas para el cambio de texto y color
+  const text = isFollowing ? "Siguiendo" : "Seguir";
+  const buttonClassName = isFollowing
+    ? "tw-followCard-button is-following"
+    : "tw-followCard-button";
+
+  //funcion para que interactue al momento de darle click
+  const handleClick = () => {
+    setIsFollowing(!isFollowing);
+  };
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -17,7 +37,10 @@ const TwitterFollowCard = ({ userName, name, isFollowing, children }) => {
       </header>
 
       <aside>
-        <button className="tw-followCard-button">Seguir</button>
+        <button onClick={handleClick} className={buttonClassName}>
+          <span className="tw-followCard-text">{text}</span>
+          <span className="tw-followCard-stopFollow">Dejar de seguir</span>
+        </button>
       </aside>
     </article>
   );

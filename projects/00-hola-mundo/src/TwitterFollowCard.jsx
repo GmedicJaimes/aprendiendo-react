@@ -1,11 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-const TwitterFollowCard = ({
-  userName,
-  name,
-  children,
-  initialIsFollowing,
-}) => {
+const TwitterFollowCard = ({ userName, children, initialIsFollowing }) => {
   //creacion del estado para el boton de seguir
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
 
@@ -28,10 +23,7 @@ const TwitterFollowCard = ({
           alt="avatar de saitama"
         />
         <div className="tw-followCard-info">
-          <strong>
-            {name}
-            {children}
-          </strong>
+          <strong>{children}</strong>
           <span className="tw-followCard-infoUserName">@{userName}</span>
         </div>
       </header>

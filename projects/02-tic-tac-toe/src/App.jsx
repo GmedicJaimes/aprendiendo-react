@@ -18,13 +18,15 @@ function App() {
   //estado para saber de quien es el turno
   const [turn, setTurn] = useState(TURNS.X);
 
+  const updateBoard = () => {};
+
   return (
     <main className="board">
       <h1>Tic tac toe</h1>
       <section className="game">
         {board.map((_, index) => {
           return (
-            <Square key={index} index={index}>
+            <Square key={index} index={index} updateBoard={updateBoard}>
               {board[index]}
             </Square>
           );

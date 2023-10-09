@@ -19,6 +19,17 @@ const Square = ({ children, isSelected, updateBoard, index }) => {
   );
 };
 
+const WINNER_COMBOS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
 function App() {
   //inicializacion del estado de las posiciones del tablero
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -26,12 +37,20 @@ function App() {
   //estado para saber de quien es el turno
   const [turn, setTurn] = useState(TURNS.X);
 
-  //funcion mas importante
+  //estado para saber cuando hay un ganador
+  const [winner, setWinner] = useState(null);
+
+  //funcion mas importante, actualizacion de los estados
   const updateBoard = (index) => {
+    //si existe algo en la posicion no actualizar
+    if (board[index]) return;
+
+    //actualizar el estado del tablero
     const newBoard = [...board];
     newBoard[index] = turn;
     setBoard(newBoard);
 
+    // actualizar el estado del turno
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
   };
